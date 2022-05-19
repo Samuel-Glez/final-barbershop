@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reserva</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form" #form="ngForm" (ngSubmit)="reservaForm(form)">
+      <ion-item class="scroll-lateral">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="name" size="4" *ngFor=" let user of allUser">
+                <div >
+                  <ion-icon class="ion-icon" color="medium" name="person-circle-outline" [color]="isDanger2(user.idusuario) ? 'primary' : 'medium'" outline (click)="selecteduser(user.idusuario)" ></ion-icon><br />
+                </div>
+                <ion-label>{{user.nombre}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    <ion-item class="calendar">
+      <ion-datetime displayFormat="DD MM YY" presentation="date" placeholder="Select Date" name="inputcalendar" (ionChange)="passedDate($event)"></ion-datetime>
+    </ion-item><br>
+    <ion-item class="scroll-lateral">
+      <div *ngFor="let hora of horasFinales" >
+                <ion-button [color]="isDanger(hora) ? 'primary' : 'medium'" outline (click)="selectedhour(hora)">{{hora}}</ion-button>
+      </div>
+    </ion-item>
+
+    <ion-card class="border-card">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="9">
+            <ion-label > <b>Servicio:</b>  {{allServicio.servicio}}</ion-label><br />
+            <div *ngFor=" let user of allUser">
+              <div *ngIf="idpeluquero === user.idusuario">
+                <ion-label> <b>Peluquero:</b>  {{user.nombre}} {{user.apellidos}}</ion-label>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <ion-label class="precio">{{allServicio.precio}} €</ion-label><br />
+            <ion-label>{{allServicio.tiempo}} min</ion-label><br />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card><br>
+
+    <div>
+      <ion-button  class="button2" expand="full" type="submit" >Reservar</ion-button>
+    </div>
+    <div *ngIf="onClick() === 'yes'">
+      <ion-button class="button2" expand="full" type="submit" >Modificar</ion-button>
+    </div>
+
+
+  </form>
+
+
+</ion-content>

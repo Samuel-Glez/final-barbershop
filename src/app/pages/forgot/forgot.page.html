@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form-margin" #form="ngForm" (ngSubmit)="forgot(form)">
+    <div>
+      <ion-img src='\assets\icon\logo-app.png'></ion-img><br />
+    </div>
+    <div class="input-group">
+      <ion-item class="ion-item">
+        <ion-input name="inputemail" ngModel type="email" placeholder="Email:"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input name="inputtelefono" ngModel type="number" placeholder="Teléfono"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <ion-button class="boton" shape="round" expand="block" type="submit" onClick="sendEmail()">Recuperar contraseña</ion-button>
+    </div>
+    <div *ngIf="password" class="ion-text-center">
+        <ion-label>Su contraseña es: <br> {{yourPassword()}}</ion-label>
+    </div>
+  </form>
+</ion-content>

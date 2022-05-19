@@ -1,0 +1,46 @@
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto!important;
+  background-color: white;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.margen{
+margin: 5%;
+}
+
+.margen2{
+    margin-left: 5%;
+    }
+
+.bold{
+    font-weight: bold;
+}
+
+.centrar{
+text-align: center;
+}
+
+.hours-col {
+    text-align: center;
+  }
+
+  .telefono {
+    zoom: 1;
+    font-size: larger;
+  }
+
+  .botonLLamar{
+    margin-top: 5%;
+    margin-bottom: 4%;
+  }
+
+  .ion-icon {
+    zoom: 4;
+    color: rgb(212, 212, 212);
+  }
+

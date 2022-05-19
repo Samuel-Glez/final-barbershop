@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.6303321661494!2d-16.714609185341924!3d28.37002380266499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a87f92ac2d8ed%3A0x4f8731332f53e900!2sDavid%20Gonz%C3%A1lez%20Barber%20Shop!5e0!3m2!1ses!2ses!4v1651869315707!5m2!1ses!2ses" width="275" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <div>
+    <ion-grid>
+      <ion-row class="margen2">
+        <ion-col size="10">
+          <ion-label class="bold">EMPLEADOS</ion-label><br>
+        </ion-col>
+        <ion-col size="3.5" *ngFor=" let user of allUser">
+          <div class="hours-col">
+            <ion-icon class="ion-icon" name="person-circle-outline"></ion-icon><br />
+            <ion-label>{{user.nombre}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <div>
+          <ion-item>
+            <ion-col size="12" class="centrar">
+              <ion-label class="bold">CONTACTO Y HORARIO</ion-label>
+            </ion-col>
+          </ion-item>
+          <ion-item>
+            <ion-col size="1">
+              <ion-icon class="telefono" name="phone-portrait-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="7" *ngFor=" let tel of telUser">
+              <ion-label class="telefono"> &nbsp; {{tel.telefono}}</ion-label>
+            </ion-col>
+            <ion-col size="1" class="botonLLamar">
+              <ion-button color="light" >llamar</ion-button>
+            </ion-col>
+          </ion-item>
+        </div>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-grid><br>
+        <ion-row>
+          <ion-col size="4">
+            <ion-label>Lunes</ion-label>
+          </ion-col>
+          <ion-col size="8" class="hours-col">
+            <ion-label>09:00 - 19:00</ion-label><br />
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>Martes</ion-label><br />
+          </ion-col>
+          <ion-col size="8" class="hours-col">
+            <ion-label>09:00 - 19:00</ion-label><br />
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>Miércoles</ion-label><br />
+          </ion-col>
+          <ion-col size="8" class="hours-col">
+            <ion-label>09:00 - 19:00</ion-label><br />
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>Jueves</ion-label><br />
+          </ion-col>
+          <ion-col size="8" class="hours-col">
+            <ion-label>09:00 - 19:00</ion-label><br />
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>Viernes</ion-label><br />
+          </ion-col>
+          <ion-col size="8" class="hours-col">
+            <ion-label>09:00 - 19:00</ion-label><br />
+          </ion-col>
+          <ion-col size="4">
+            <ion-label>Sábado</ion-label><br />
+          </ion-col>
+          <ion-col size="8" class="hours-col">
+            <ion-label>09:00 - 13:00</ion-label><br />
+          </ion-col>
+          <ion-col size="6">
+            <ion-label>Domingo</ion-label><br />
+          </ion-col>
+          <ion-col size="4" class="hours-col">
+            <ion-label>Cerrado</ion-label><br />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+    <div class="margen">
+      <ion-icon name="car-outline"></ion-icon>
+      <ion-label> Plaza de aparcamiento</ion-label><br />
+      <ion-icon name="accessibility-outline"></ion-icon>
+      <ion-label> Fácil acceso para personas con discapacidad</ion-label><br />
+      <ion-icon name="checkbox-outline"></ion-icon>
+      <ion-label> Se permiten mascotas</ion-label><br />
+      <ion-icon name="checkbox-outline"></ion-icon>
+      <ion-label>Adaptado para niños</ion-label><br />
+    </div><br>
+  </div>
+</ion-content>

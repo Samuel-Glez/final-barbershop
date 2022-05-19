@@ -1,0 +1,40 @@
+.form-margin{
+    margin: 5%;
+}
+
+.title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+.div-top{
+    border-color: rgb(233, 233, 233);
+    border-left-style: groove;
+    border-right-style: groove;
+    border-top-style: groove;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 5px;
+}
+
+.div-bottom{
+    border-color: rgb(233, 233, 233);
+    border-style: groove;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.inscribite{
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+
+.size{
+    font-size: smaller;
+}

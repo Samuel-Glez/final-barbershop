@@ -1,0 +1,38 @@
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title>Nueva reseña</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+<ion-content class="centrar">
+  
+    <div class="ion-img">
+      <ion-img class="ion-img" src='\assets\icon\logo-app.png'></ion-img><br />
+    </div>
+    <form class="form-margin" #form="ngForm" (ngSubmit)="agregarReview(form)">
+      <ion-item>
+        <div class="superponer">
+          <ion-icon class="ion-icon" name="star-outline" ngDefaultControl *ngFor="let num of [1,2,3,4,5]"
+            (click)="rate(num)" [ngStyle]="{'color':'#949494'}"></ion-icon>
+        </div>
+        <div class="superponer2">
+          <ion-icon class="ion-icon2" name="star" ngDefaultControl *ngFor="let num of [1,2,3,4,5]"
+            [ngStyle]="{'color':getColor(num)}"></ion-icon>
+        </div><br>
+      </ion-item><br>
+      <ion-item>
+        <div class="text-area">
+          <ion-label>Opinion: </ion-label>
+          <ion-textarea name="inputopinion" ngModel type="text" placeholder="Escriba su reseña aqui"></ion-textarea>
+        </div>
+      </ion-item><br>
+      <div class="button-center">
+        <ion-button expand="full" shape="round" color="primary" type="submit">Agregar reseña</ion-button>
+      </div>
+    </form>
+ 
+  
+</ion-content>

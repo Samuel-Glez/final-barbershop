@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-img">
+    <ion-img class="ion-img" src='\assets\icon\logo-app.png'></ion-img>
+  </div>
+  <form class="form-margin" #form="ngForm" (ngSubmit)="agregarUsuario(form)">
+      
+    <div class="div-top">
+      <ion-input name="inputnombre" ngModel type="text" placeholder="Nombre"></ion-input>
+    </div>
+    <div class="div-medium">
+      <ion-input name="inputapellidos" ngModel type="text" placeholder="Apellidos"></ion-input>
+    </div>
+    <div class="div-medium">
+      <ion-input name="inputtelefono" ngModel type="number" placeholder="Teléfono"></ion-input>
+    </div>
+    <div class="div-medium">
+      <ion-input name="inputemail" ngModel type="email" placeholder="Email"></ion-input>
+    </div>
+    <div class="div-medium">
+      <ion-input name="inputpassword" ngModel type="text" placeholder="Contraseña"></ion-input>
+    </div>
+    <div class="div-bottom">
+      <ion-input name="inputpassword2" ngModel type="text" placeholder="Repetir contraseña"></ion-input>
+    </div>
+    <div class="button-center">
+      <ion-button expand="full" shape="round" type="submit">Crear usuario</ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,81 @@
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto!important;
+  background-color: white;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+.ion-icon {
+  zoom: 2;
+}
+
+.ion-icon2 {
+  zoom: 2;
+}
+
+.align-star {
+  text-align: right;
+}
+
+.superponer {
+  position: absolute;
+  left: 10%;
+  z-index: 2;
+}
+.superponer2 {
+  position: absolute;
+  left: 10%;
+  z-index: 1;
+}
+.añadir {
+  float: right;
+  margin-right: 5%;
+}
+
+.button {
+  text-align: center;
+}
+
+.button2 {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 6%;
+  background: white;
+  background-size: 10%;
+  
+}
+
+.div-review {
+  position: a;
+  bottom: 0;
+  width: 100%;
+  height: 6%;
+  background-size: 10%;
+  
+  
+}
+.ion-img{
+  width: 50%;
+}
+
+
+
+.card {
+  width: 100%;
+}
+
+
+.title{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.atras{
+  float: left;
+}

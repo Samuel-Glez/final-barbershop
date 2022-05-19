@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="end" class="usuario" name="person-circle-outline" [routerLink]="['/edituser', idusuario]"  [ngStyle]="{'color':'#3880FF'}"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img class="ion-img" src='\assets\icon\logo-app.png'></ion-img><br />
+  <div class="ion-text-center">
+    <ion-button expand="full" shape="round" routerLink="/listreserva">Reservas</ion-button>
+    <div *ngIf="idrol === 1">
+      <ion-button expand="full" shape="round" routerLink="/user">Usuarios</ion-button>
+      <ion-button expand="full" shape="round" routerLink="/servicio">Servicios</ion-button>
+      <ion-button expand="full" shape="round" routerLink="/review">Reseñas</ion-button>
+    </div>
+  </div><br>
+
+</ion-content>

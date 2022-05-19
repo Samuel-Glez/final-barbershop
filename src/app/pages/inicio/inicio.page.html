@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon class="refresh" name="refresh-circle-outline" (click)="refresh()"></ion-icon>
+    <ion-icon class="añadir" name="person-circle-outline" [routerLink]="['/edituser', idusuario()]"  [ngStyle]="{'color':'#3880FF'}"></ion-icon>
+    <ion-title class="title">Barber Shop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-img class="ion-img" src='\assets\icon\logo-app.png'></ion-img>
+
+  <div *ngIf="link">
+    <ion-card class="border-card" (click)="canDismiss()">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="7">
+            <div *ngIf="ultimaReserva">
+              <div *ngIf="fechaActual() === true">
+                <div *ngIf="ultimaReserva.status === 'Cancelada'">
+                  <ion-badge color="danger"> Cancelada </ion-badge><br />
+                </div>
+                <div *ngIf="ultimaReserva.status === 'Confirmada'">
+                  <ion-badge color="danger"> Terminado </ion-badge><br />
+                </div>
+              </div>
+              <div *ngIf="fechaActual() === false">
+                <div *ngIf="ultimaReserva.status === 'Confirmada'">
+                  <ion-badge color="success">{{ultimaReserva.status}}</ion-badge><br />
+                </div>
+                <div *ngIf="ultimaReserva.status === 'Cancelada'">
+                  <ion-badge color="danger">{{ultimaReserva.status}}</ion-badge><br />
+                </div>
+              </div>
+            </div>
+            <div *ngFor=" let servi of allService">
+              <div *ngIf="servi.idservicio === idservicio">
+                <ion-label class="cut-hair">{{servi.servicio}}</ion-label><br />
+              </div>
+            </div>
+                <ion-label>{{nombrePeluquero}}</ion-label>
+          </ion-col>
+          <ion-col size="auto" class="fecha-col" *ngIf="ultimaReserva">
+            <ion-label>{{month}}</ion-label><br />
+            <ion-label class="day">{{day}}</ion-label><br />
+            <div *ngIf=" ultimaReserva.status === 'Confirmada'">
+              <ion-label>{{horaFront}} </ion-label><br />
+            </div>
+            <div *ngIf=" ultimaReserva.status === 'Cancelada'">
+              <ion-label>{{horacanceladaFront}}</ion-label><br />
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+
+
+<div class="ion-text-center">
+  <ion-button routerLink="/review">Reseñas</ion-button>
+  <ion-button routerLink="/details">Detalles</ion-button>
+
+</div><br>
+<div class="servicio">
+  <ion-label>Servicios</ion-label>
+</div>
+
+
+
+    <ion-grid>
+      <ion-list>
+        <ion-item *ngFor=" let servi of allService">
+          <ion-label routerLinkActive="router-link-active"><br> <b>{{servi.servicio}}</b> <br> Precio:  {{servi.precio}} € <br /> Tiempo: {{servi.tiempo}}
+            min <br>
+          <ion-button  expand="full" shape="round" [routerLink]="['/reserva', servi.idservicio]">Reservar</ion-button>
+        </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-grid>
+
+
+</ion-content>

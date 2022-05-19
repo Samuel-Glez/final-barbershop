@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">Barber shop</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form-margin" #form="ngForm" (ngSubmit)="login(form)">
+    <div>
+      <ion-img src='\assets\icon\logo-app.png'></ion-img><br />
+    </div>
+    <div class="div-top">
+      <ion-input name="inputemail" ngModel type="email" placeholder="Email:"></ion-input>
+    </div>
+      <div class="div-bottom">
+        <ion-input name="inputpassword" ngModel type="password" placeholder="Contraseña:"></ion-input>
+      </div>
+    <div>
+      <ion-button shape="round" expand="block" type="submit">Iniciar sesión</ion-button>
+    </div>
+    <div class="inscribite">
+      <ion-label class="size" routerLink="/forgot">¿Recuperar contraseña?</ion-label>
+      <ion-label color="primary" routerLink="/newuser">¡Registrate!</ion-label>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-badge class="añadir" color="success" routerLink="/newservicio" type="submit">+</ion-badge>
+    <ion-title>Servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor=" let servicio of allServicio">
+      <ion-label routerLinkActive="router-link-active"><br>
+        <ion-label>Servicio: {{servicio.servicio}}</ion-label><br />
+        <ion-label>Precio: {{servicio.precio}} €</ion-label><br />
+        <ion-label>Tiempo: {{servicio.tiempo}} minutos</ion-label><br />
+        <ion-button expand="full" shape="round" [routerLink]="['/editservicio', servicio.idservicio]">Editar
+        </ion-button>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

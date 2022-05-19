@@ -1,0 +1,48 @@
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto!important;
+  background-color: white;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.border-card {
+  border-radius: 10px;
+  border-style: groove;
+  border-color: rgb(233, 233, 233);
+}
+
+.cut-hair {
+  font-weight: bold;
+}
+
+.precio {
+  font-weight: bold;
+}
+
+.scroll-lateral {
+  overflow-x:auto;
+}
+
+.ion-icon {
+  zoom: 3;
+  color: rgb(212, 212, 212);
+}
+
+.name {
+  text-align: center;
+}
+
+.button2 {
+  position: fixed;
+  bottom: 0;
+  width: 99%;
+  height: 6%;
+  background: white;
+  background-size: 10%;
+  z-index: 3;
+}
+

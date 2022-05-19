@@ -1,0 +1,22 @@
+ion-content {
+    --padding-top: 10%;
+    --padding-start: 10%;
+    --padding-end: 10%;
+}
+
+.ion-item{
+    --border-color: black;
+}
+
+.input-group {
+    border: 1.5px;
+    border-color: black;
+    border-style: groove;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.boton{
+    margin-bottom: 5%;
+}

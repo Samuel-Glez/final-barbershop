@@ -1,0 +1,9 @@
+{
+  "name": "barber shop app",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "045cd12f"
+}

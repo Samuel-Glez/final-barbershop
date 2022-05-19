@@ -1,0 +1,14 @@
+ion-content {
+    // overwrite inline styles
+    --offset-bottom: auto!important;
+    background-color: white;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+.card{
+    width: 100%;
+}

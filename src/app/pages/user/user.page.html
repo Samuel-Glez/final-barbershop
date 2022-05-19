@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-badge class="añadir" color="success" routerLink="/newuser" type="submit">+</ion-badge>
+    <div class="ion-text-center">
+      <ion-title>Usuarios</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngFor=" let user of allUser" >
+    <ion-item *ngIf="user.fkidrol !== 1">
+      <ion-label routerLinkActive="router-link-active">
+        <div class="ion-text-center">
+          <ion-label>{{user.nombre}} {{user.apellidos}}</ion-label>
+        </div><br>
+        <ion-button expand="full" shape="round" [routerLink]="['/edituser', user.idusuario]">Editar</ion-button>
+      </ion-label>
+    </ion-item>
+  </div>
+  </ion-list>
+</ion-content>

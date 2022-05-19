@@ -1,0 +1,79 @@
+ion-content {
+  // overwrite inline styles
+  --offset-bottom: auto!important;
+  background-color: white;
+  --overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.refresh{
+  float: left;
+  margin-left: 5%;
+  zoom: 2;
+}
+
+.title{
+  text-align: center;
+}
+
+
+.name-label {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.address-label {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.ion-img {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+
+}
+
+.border-card {
+  border-radius: 10px;
+  border-style: groove;
+  border-color: rgb(233, 233, 233);
+}
+
+.cut-hair {
+  font-weight: bold;
+}
+
+.servicio{
+  font-weight: bold;
+  text-align: center;
+  font-size: larger;
+}
+
+.fecha-col {
+  margin-left: auto;
+  padding-left: 3%;
+  text-align: center;
+  border-color: rgb(233, 233, 233);
+  border-left-style: groove;
+
+}
+
+.day{
+  font-size: large;
+  font-weight: bold;
+}
+
+.añadir{
+  float: right;
+  margin-right: 5%;
+  zoom: 2;
+}
+
+

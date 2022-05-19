@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title>Reservas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-item button="true" id="open-date-input">
+    <ion-label class="ion-text-center">Fecha: {{ fechaActual }}</ion-label>
+
+    <ion-popover trigger="open-date-input" show-backdrop="false">
+      <ng-template>
+        <ion-datetime #popoverDatetime presentation="date" (ionChange)="passedDate($event,false)">
+        </ion-datetime>
+      </ng-template>
+    </ion-popover>
+  </ion-item>
+  <div class="list">
+    <div *ngFor=" let reserva of allReserva">
+      <div *ngFor=" let user of allUser">
+        <div *ngFor="let servicio of allServicio">
+          <div *ngIf="reserva.fkidservicio === servicio.idservicio">
+            <div *ngIf="reserva.fkidusuario === user.idusuario">
+              <div *ngIf="reserva.fkidpeluquero === idusuario()">
+                <div *ngIf="reserva.status !== 'Cancelada'">
+                  <ion-list>
+                    <ion-item>
+                      <ion-card class="card" (click)="canDismiss(reserva.idreserva,reserva.hora,servicio.idservicio,reserva.fkidusuario)">
+                        <ion-card-header>
+                          <ion-card-subtitle>Servicio: <br> {{servicio.servicio}}</ion-card-subtitle>
+                        </ion-card-header>
+                        <ion-card-content><b>Cliente:</b>  <br/> {{user.nombre}} {{user.apellidos}} <br/> <b>Duracion:</b>  {{reserva.duracion}} min <br/> <b>Hora de cita:</b> {{reserva.hora}} h </ion-card-content>
+                      </ion-card>
+                    </ion-item>
+                  </ion-list>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

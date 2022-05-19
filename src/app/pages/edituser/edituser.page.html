@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="ion-img">
+    <ion-img  src='\assets\icon\logo-app.png'></ion-img>
+  </div>
+  <form class="form-margin" #form="ngForm" (ngSubmit)="editarForm(form)">
+   
+      
+        <div class="div-top">
+          <ion-label class="label">Nombre:</ion-label>
+          <ion-input name="inputnombre" [(ngModel)]="allUser.nombre" type="text"></ion-input>
+        </div>
+      
+    
+        <div class="div-medium">
+          <ion-label class="label">Apellidos:</ion-label>
+          <ion-input name="inputapellidos" [(ngModel)]="allUser.apellidos" type="text"></ion-input>
+        </div>
+     
+     
+        <div class="div-medium">
+          <ion-label class="label">Teléfono:</ion-label>
+        <ion-input name="inputtelefono" [(ngModel)]="allUser.telefono" type="number"></ion-input>
+        </div>
+     
+     
+        <div class="div-medium">
+          <ion-label class="label">Email:</ion-label>
+          <ion-input name="inputemail" [(ngModel)]="allUser.email" type="email"></ion-input>
+        </div>
+      
+      <div *ngIf="!validarrol(1)">
+        
+          <div class="div-bottom">
+            <ion-label class="label">Contraseña:</ion-label>
+            <ion-input name="inputpassword" [(ngModel)]="allUser.password" type="text"></ion-input>
+          </div>
+        
+      </div>
+      <div *ngIf="allUser.fkidrol === 1">
+        
+        <div class="div-medium">
+          <ion-label class="label">Contraseña:</ion-label>
+          <ion-input name="inputpassword" [(ngModel)]="allUser.password" type="text"></ion-input>
+        </div>
+      
+    </div>
+      <div *ngIf="validarrol(1)">
+        <div class="div-bottom">
+          <ion-label class="label">Rol: </ion-label>
+          <ion-select cancel-text="Cancelar" [(ngModel)]="allUser.fkidrol" name="inputrol" >
+            <ion-select-option [value]="1">Admin</ion-select-option>
+            <ion-select-option [value]="2">Cliente</ion-select-option>
+            <ion-select-option [value]="3" >Peluquero</ion-select-option>
+          </ion-select>
+        </div>
+      </div>
+    
+   
+      <div class="button-center">
+        <ion-button expand="full" (click)="editarUsuario()"  shape="round" color="primary" type="submit">
+          Editar
+        </ion-button>
+        <div *ngIf="validarusuario(allUser.idusuario)">
+          <ion-button expand="full" (click)="cerrarSesion()"  shape="round" color="danger" type="submit">
+            Cerrar sesion
+          </ion-button>
+        </div>
+      </div>
+    
+  </form>
+
+</ion-content>

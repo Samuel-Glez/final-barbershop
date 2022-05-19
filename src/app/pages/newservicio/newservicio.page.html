@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo servicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <div class="ion-img">
+    <ion-img class="ion-img" src='\assets\icon\logo-app.png'></ion-img>
+  </div>
+  <form class="form-margin" #form="ngForm" (ngSubmit)="agregarServicio(form)">
+    <div class="div-top">
+      <ion-input class="imput" name="inputservicio" ngModel type="text" placeholder="Descripción del servicio"></ion-input>
+    </div>
+    <div class="div-medium">
+      <ion-input class="imput" name="inputprecio" ngModel type="number" placeholder="Precio en euros"></ion-input>
+    </div>
+    <div class="div-bottom">
+    
+          <ion-select  placeholder="Tiempo" cancel-text="Cancelar" [(ngModel)]="tiempo" name="inputtiempo" >
+            <ion-select-option [value]="15">15 minutos</ion-select-option>
+            <ion-select-option [value]="30">30 minutos</ion-select-option>
+            <ion-select-option [value]="45" >45 minutos</ion-select-option>
+          </ion-select>
+    </div>
+    <div class="button-center">
+      <ion-button expand="full" shape="round" color="primary" type="submit">Crear servicio</ion-button>
+    </div>
+  </form>
+</ion-content>

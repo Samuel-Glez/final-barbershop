@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar servicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-img">
+    <ion-img class="ion-img" src='\assets\icon\logo-app.png'></ion-img>
+  </div>
+  <form class="form-margin" #form="ngForm" (ngSubmit)="editarForm(form)">
+    <div class="div-top">
+      <ion-label class="label">Servicio: </ion-label>
+      <ion-input name="inputservicio" [(ngModel)]="allServicio.servicio" type="text"></ion-input>
+    </div>
+    <div class="div-medium">
+      <ion-label class="label">Precio en euros: </ion-label>
+      <ion-input name="inputprecio" [(ngModel)]="allServicio.precio" type="text"></ion-input>
+    </div>
+    <div class="div-bottom">
+      <ion-label class="label">Tiempo en minutos: </ion-label>
+      <ion-input name="inputtiempo" [(ngModel)]="allServicio.tiempo" type="number"></ion-input>
+    </div>
+    <div class="button-center">
+      <ion-button (click)="editarServicio()" shape="round" color="primary" type="submit">
+        Editar
+      </ion-button>
+      <ion-button (click)="borrarServicio()" shape="round" color="danger" type="submit">
+        Borrar
+      </ion-button>
+    </div>
+
+  </form>
+</ion-content>
