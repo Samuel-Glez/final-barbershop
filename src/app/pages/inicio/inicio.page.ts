@@ -248,15 +248,21 @@ export class InicioPage implements OnInit {
 
 
   storeName() {
+   //seguir aqui
     this.ultimaReserva = this.allReserva[0];
+    const usuario = 'usuario';
     const idreserva = 'idreserva';
     const update = 'update';
     const id = (this.ultimaReserva.idreserva).toString();
     const isupdate = 'yes';
+    const usuarioid = (this.ultimaReserva.fkidusuario.toString());
     localStorage.setItem(idreserva, (id));
     localStorage.setItem(update, (isupdate));
+    localStorage.setItem(usuario, (usuarioid));
+
     console.log(isupdate);
     console.log(id);
+    console.log(usuario);
   }
 
   refresh(){

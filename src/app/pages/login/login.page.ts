@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 
 interface Usuario {
   idusuario: number;
@@ -26,7 +27,7 @@ export class LoginPage implements OnInit {
 
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router, public toastController: ToastController) { }
 
   ngOnInit() {
 
@@ -87,7 +88,16 @@ export class LoginPage implements OnInit {
           });
       }
 
+    }else{
+      this.presentToast();
     }
-
   }
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'El usuario o la contraseña no son validos',
+      duration: 2000
+    });
+    toast.present();
+}
+
 }

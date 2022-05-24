@@ -73,10 +73,6 @@ export class ReservaPage implements OnInit {
   horaDB: string;
 
   horas: string[] = [
-    '8:00',
-    '8:15',
-    '8:30',
-    '8:45',
     '9:00',
     '9:15',
     '9:30',
@@ -93,14 +89,6 @@ export class ReservaPage implements OnInit {
     '12:15',
     '12:30',
     '12:45',
-    '13:00',
-    '13:15',
-    '13:30',
-    '13:45',
-    '14:00',
-    '14:15',
-    '14:30',
-    '14:45',
     '15:00',
     '15:15',
     '15:30',
@@ -295,13 +283,26 @@ export class ReservaPage implements OnInit {
 
         }
         if (this.allServicio.tiempo === 30) {
-          this.horasUnidas = this.horas[i] + ',' + this.horas[i + 1];
-
+           this.horasUnidas = this.horas[i] + ',' + this.horas[i + 1];
+           if(this.horaseleccionada === '12:45'){
+            this.horasUnidas = this.horas[i];
+           }
+           if(this.horaseleccionada === '18:45'){
+            this.horasUnidas = this.horas[i];
+           }
         }
+
+
         if (this.allServicio.tiempo === 45) {
           this.horasUnidas = this.horas[i] + ',' + this.horas[i + 1] + ',' + this.horas[i + 2];
-
+          if(this.horaseleccionada === '12:45'){
+            this.horasUnidas = this.horas[i];
+           }
+           if(this.horaseleccionada === '18:45'){
+            this.horasUnidas = this.horas[i];
+           }
         }
+
         console.log(this.horasUnidas);
       }
     }
@@ -329,6 +330,7 @@ export class ReservaPage implements OnInit {
     const date = new Date(selectedDate.detail.value);
     console.log(selectedDate.detail.value);
     this.fechaseleccionada = date.toISOString().split('T')[0];
+    const day = new Date(this.fechaseleccionada).getDay();
     console.log(this.fechaseleccionada);
     this.reservaService
       .getReserva()
@@ -345,6 +347,10 @@ export class ReservaPage implements OnInit {
           this.horasFinales = [];
           this.validarFecha();
         }
+        if (day === 0){
+          this.horasFinales = [];
+        }
+
       });
 
     console.log(date.toISOString().split('T')[0]);
@@ -388,6 +394,7 @@ export class ReservaPage implements OnInit {
     if (fechaSalida < fechaDB) {
       this.horasFinales.push(hora);
     }
+
 
     console.log(fechaActual);
     console.log(horaActual);
